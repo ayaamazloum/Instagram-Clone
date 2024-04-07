@@ -78,6 +78,10 @@ img {
   font-weight: 100;
 }
 
+.self-start {
+  align-self: start;
+}
+
 .text-center {
   text-align: center;
 }
@@ -140,6 +144,10 @@ img {
 
 .mt-30 {
   margin-top: 30px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
 }
 
 .mb-20 {

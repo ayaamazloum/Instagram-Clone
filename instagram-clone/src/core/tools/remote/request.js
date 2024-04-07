@@ -1,9 +1,8 @@
 import axios from "axios";
-import { requestMehods } from "../../enums/requestMethods";
 
 axios.defaults.baseURL = "http://localhost:8000/api";
 
-export const sendRequest = async (method, route, body) => {
+const sendRequest = async (method, route, body) => {
   const response = await axios.request({
     method: method,
     url: route,
@@ -19,3 +18,5 @@ export const sendRequest = async (method, route, body) => {
 
   return response;
 };
+
+export default sendRequest;
