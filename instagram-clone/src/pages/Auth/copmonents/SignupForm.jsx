@@ -30,9 +30,7 @@ const SignupForm = ({handleUserLogged}) => {
                 handleUserLogged(true);
                 localStorage.setItem('token', res.data.authorisation.token);
             }
-        } catch (e) {
-            console.log(e);
-            setError(e.response.data.message.split(".")[0]);}
+        } catch (e) { setError(e.response.data.message.split(".")[0]);}
     }
   return (
       <>
@@ -50,7 +48,7 @@ const SignupForm = ({handleUserLogged}) => {
                   className='auth-input border semi-rounded' type='text' placeholder='Full Name' />
               {errors.name !== '' && <p className="primary-text xsm-text self-start mb-10">{errors.name}</p>}
 
-             <input onChange={(e) => { setCredentials({ ...credentials, username: e.target.value }) }}
+              <input onChange={(e) => { setCredentials({ ...credentials, username: e.target.value }) }}
                   className='auth-input border semi-rounded' type='text' placeholder='Username' />
               
               <input onChange={(e) => {
