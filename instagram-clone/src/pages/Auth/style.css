@@ -1,0 +1,28 @@
+.box {
+    width: 450px;
+    padding: 40px 20px;
+}
+
+.auth-logo {
+    width: 50%;
+}
+
+.auth-input {
+    height: 45px;
+    width: 350px;
+    padding: 20px 10px;
+    background-color: #f7f6f6;
+}
+
+.auth-input:focus {
+    border: 1px solid #a7a7a7;
+}
+
+.auth-button {
+    height: 40px;
+    width: 350px;
+}
+
+.auth-button:hover {
+    background-color: rgb(0, 121, 202);;
+}

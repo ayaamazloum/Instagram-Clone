@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border: 0;
+}
+
+.app {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -73,7 +75,11 @@ img {
 }
 
 .thin {
-  font-weight: 200;
+  font-weight: 100;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .lg-text {
@@ -97,7 +103,11 @@ img {
 }
 
 .semi-rounded {
-  border-radius: 5px;
+  border-radius: 3px;
+}
+
+.gap-5 {
+  gap: 5px;
 }
 
 .gap-10 {
@@ -124,8 +134,16 @@ img {
   gap: 70px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
 .mt-30 {
   margin-top: 30px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
 }
 
 button {
@@ -149,4 +167,8 @@ input:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%);
+}
+
+.border {
+  border: 1px solid #ccc;
 }

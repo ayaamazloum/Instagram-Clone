@@ -3,7 +3,7 @@
 }
 
 .secondary-bg {
-  background-color: #282828;
+  background-color: rgb(0, 149, 246);
 }
 
 .light-bg {
@@ -23,7 +23,7 @@
 }
 
 .secondary-text {
-  color: #282828;
+  color: rgb(0, 149, 246);
 }
 
 .light-text {
@@ -44,6 +44,10 @@
 
 .yellow-text {
   color: #e2c012;
+}
+
+.blue-text {
+  color: rgb(0, 55, 107);
 }
 
 .primary-shadow {
