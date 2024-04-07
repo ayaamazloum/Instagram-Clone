@@ -38,6 +38,11 @@ img {
   align-items: center;
 }
 
+.start-center {
+  justify-content: start;
+  align-items: center;
+}
+
 .space-between {
   justify-content: space-between;
   align-items: center;

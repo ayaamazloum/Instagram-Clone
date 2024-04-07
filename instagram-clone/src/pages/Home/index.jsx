@@ -1,8 +1,11 @@
+import NavBar from '../../components/NavBar'
 import './style.css'
 
-const Home = () => {
+const Home = ({handleUserLogged}) => {
   return (
-    <div>Home</div>
+    <div className='home page'>
+      <NavBar handleUserLogged={handleUserLogged} />
+    </div>
   )
 }
 

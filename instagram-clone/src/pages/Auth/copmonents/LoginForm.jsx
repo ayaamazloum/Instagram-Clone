@@ -19,7 +19,7 @@ const LoginForm = ({handleUserLogged}) => {
           localStorage.setItem('token', res.data.authorisation.token);
       }
   } catch (e) {
-      console.log(e);
+      console.error(e);
       setError('Incorrect credentials')}
   }
   return (

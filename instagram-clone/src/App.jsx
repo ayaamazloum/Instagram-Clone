@@ -17,7 +17,7 @@ const App = () => {
     <div className="app sm-text">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={userLogged ? <Home /> : <Auth handleUserLogged={handleUserLogged} />} />
+          <Route path="/" element={userLogged ? <Home handleUserLogged={handleUserLogged} /> : <Auth handleUserLogged={handleUserLogged} />} />
         </Routes>
       </BrowserRouter>
     </div>  
