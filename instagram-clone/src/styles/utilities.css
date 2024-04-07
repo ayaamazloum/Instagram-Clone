@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.half-height {
+  height: 50%;
+}
+
+.lexend-text {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.thin {
+  font-weight: 200;
+}
+
+.lg-text {
+  font-size: 32px;
+}
+
+.md-text {
+  font-size: 24px;
+}
+
+.sm-text {
+  font-size: 18px;
+}
+
+.xsm-text {
+  font-size: 14px;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+.semi-rounded {
+  border-radius: 5px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-30 {
+  gap: 30px;
+}
+
+.gap-40 {
+  gap: 40px;
+}
+
+.gap-50 {
+  gap: 50px;
+}
+
+.gap-70 {
+  gap: 70px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.small-card-padding {
+  padding: 10px 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}

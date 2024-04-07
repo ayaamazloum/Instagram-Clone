@@ -1,0 +1,51 @@
+.primary-bg {
+  background-color: rgb(255, 48, 64);
+}
+
+.secondary-bg {
+  background-color: #282828;
+}
+
+.light-bg {
+  background-color: #f0f0f0;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.green-bg {
+  background-color: #2cda5c;
+}
+
+.primary-text {
+  color: rgb(255, 48, 64);
+}
+
+.secondary-text {
+  color: #282828;
+}
+
+.light-text {
+  color: #939393;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.black-text {
+  color: #000;
+}
+
+.green-text {
+  color: #2cda5c;
+}
+
+.yellow-text {
+  color: #e2c012;
+}
+
+.primary-shadow {
+  box-shadow: 0 0 20px 0 #00000040;
+}
