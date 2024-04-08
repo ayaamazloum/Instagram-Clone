@@ -55,6 +55,9 @@
     .nav-text {
         display: none;
     }
+    .nav-item:hover {
+        background-color: transparent;
+    }
 }
 
 @media (max-width: 768px) {

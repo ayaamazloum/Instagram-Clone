@@ -10,6 +10,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'register');
     Route::get('logout', 'logout');
     Route::get('refresh', 'refresh');
+    Route::get('search', 'search');
 });
 
 Route::controller(PostController::class)->group(function () {

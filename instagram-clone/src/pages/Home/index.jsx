@@ -5,6 +5,7 @@ const Home = ({handleUserLogged}) => {
   return (
     <div className='home page'>
       <NavBar handleUserLogged={handleUserLogged} />
+      <p>gvhjdcjhcd whj vejdh jkh</p>
     </div>
   )
 }

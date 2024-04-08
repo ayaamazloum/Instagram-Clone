@@ -16,8 +16,10 @@ const Auth = ({ handleUserLogged }) => {
                 {isLogin ? <LoginForm handleUserLogged={handleUserLogged} /> : <SignupForm handleUserLogged={handleUserLogged} />}
           </div>
           <div className='box border flex column center gap-20'>
-                {isLogin ? (<p>Have an account? <span onClick={() => { setIsLogin(false) }} className='secondary-text link'>Log in</span></p>)
-                    : (<p>Don't have an account? <span onClick={() => { setIsLogin(true) }} className='secondary-text link'>Sign up</span></p>)}
+          {isLogin ?
+            (<p>Don't have an account? <span onClick={() => { setIsLogin(true) }} className='secondary-text link'>Sign up</span></p>)
+            :(<p>Have an account? <span onClick={() => { setIsLogin(false) }} className='secondary-text link'>Log in</span></p>)
+          }
           </div>
         </div>
   )

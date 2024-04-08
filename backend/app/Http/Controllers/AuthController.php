@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Profile;
 
 class AuthController extends Controller
 {
@@ -63,6 +64,9 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $profile = new Profile();
+        $user->profile()->save($profile);
+
         $token = Auth::login($user);
         return response()->json([
             'status' => 'success',
@@ -96,4 +100,22 @@ class AuthController extends Controller
         ]);
     }
 
+    public function search(Request $request) {
+        $request->validate([
+            'query' =>'required|string',
+        ]);
+
+        $query = $request->query('query');
+
+        $users = User::with('profile')
+            ->where('name', 'LIKE', '%'. $query. '%')
+            ->orWhere('username', 'LIKE', '%'. $query. '%')
+            ->orWhere('email', 'LIKE', '%'. $query. '%')
+            ->get();
+
+        return response()->json([
+           'status' =>'success',
+            'users' => $users,
+        ]);
+    }
 }
