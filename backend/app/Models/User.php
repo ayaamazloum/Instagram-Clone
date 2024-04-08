@@ -38,6 +38,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsToMany(User::class, 'followers', 'follower_id', 'following_id');
     }
 
+    public function isFollowing($user_id)
+    {
+        return $this->following->contains('id', $user_id);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

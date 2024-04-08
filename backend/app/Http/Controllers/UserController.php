@@ -35,14 +35,56 @@ class UserController extends Controller
         ]);
     }
 
-    public function follow($userId) {
+    public function follow(Request $request) {
+        $request->validate([
+            'userId' =>'required|integer',
+        ]);
+
         $user = Auth::user();
-        $userToFollow = User::findOrFail($userId);
+        $userToFollow = User::findOrFail($request->userId);
 
         $user->following()->attach($userToFollow->id);
+
         return response()->json([
             'status' => 'success',
             'message' => 'User followed successfully'
+        ]);
+    }
+
+    public function unfollow(Request $request) {
+        $request->validate([
+            'userId' =>'required|integer',
+        ]);
+
+        $user = Auth::user();
+        $userToUnFollow = User::findOrFail($request->userId);
+
+        $user->following()->detach($userToUnFollow->id);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'User unfollowed successfully'
+        ]);
+    }
+
+    public function viewUserProfile(Request $request) {
+        $request->validate([
+            'userId' =>'required|integer',
+        ]);
+
+        $user = Auth::user();
+        $userToView = User::findOrFail($request->userId);
+        
+        $followed = false;
+
+        if($user->isFollowing($userToView->id)) {
+            $followed = true;
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'user' => $userToView,
+            'followed' => $followed,
         ]);
     }
 }

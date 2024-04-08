@@ -16,6 +16,8 @@ Route::controller(AuthController::class)->group(function () {
 Route::controller(UserController::class)->group(function () {
     Route::get('search', 'search');
     Route::post('follow', 'follow');
+    Route::post('unfollow', 'unfollow');
+    Route::post('userProfile', 'viewUserProfile');
 });
 
 Route::controller(PostController::class)->group(function () {
