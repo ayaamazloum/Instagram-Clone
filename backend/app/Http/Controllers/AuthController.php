@@ -99,23 +99,4 @@ class AuthController extends Controller
             ]
         ]);
     }
-
-    public function search(Request $request) {
-        $request->validate([
-            'query' =>'required|string',
-        ]);
-
-        $query = $request->query('query');
-
-        $users = User::with('profile')
-            ->where('name', 'LIKE', '%'. $query. '%')
-            ->orWhere('username', 'LIKE', '%'. $query. '%')
-            ->orWhere('email', 'LIKE', '%'. $query. '%')
-            ->get();
-
-        return response()->json([
-           'status' =>'success',
-            'users' => $users,
-        ]);
-    }
 }

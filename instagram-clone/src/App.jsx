@@ -5,6 +5,7 @@ import React, {useEffect, useState} from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "./pages/Auth";
 import Home from "./pages/Home";
+import Account from "./pages/Account";
 
 const App = () => {
   const [userLogged, setUserLogged] = useState(localStorage.getItem('token'));
@@ -16,9 +17,13 @@ const App = () => {
   return (
     <div className="app sm-text">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={userLogged ? <Home handleUserLogged={handleUserLogged} /> : <Auth handleUserLogged={handleUserLogged} />} />
-        </Routes>
+        {userLogged ? (
+          <Routes>
+            <Route path="/" element={<Home handleUserLogged={handleUserLogged} />} />
+            <Route path="/account/:userId" element={<Account />} />
+          </Routes>)
+          : (<Auth handleUserLogged={handleUserLogged} />)
+        }
       </BrowserRouter>
     </div>  
   );
