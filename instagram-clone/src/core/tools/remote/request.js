@@ -12,8 +12,8 @@ const sendRequest = async (method, route, body, params) => {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
-
-  if (response.status === 401) {
+  
+  if (response.status == 401) {
     localStorage.removeItem("token");
   }
 

@@ -5,7 +5,8 @@ import React, {useEffect, useState} from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "./pages/Auth";
 import Home from "./pages/Home";
-import Account from "./pages/Account";
+import UserProfile from "./pages/UserProfile";
+import Profile from "./pages/Profile";
 
 const App = () => {
   const [userLogged, setUserLogged] = useState(localStorage.getItem('token'));
@@ -20,7 +21,8 @@ const App = () => {
         {userLogged ? (
           <Routes>
             <Route path="/" element={<Home handleUserLogged={handleUserLogged} />} />
-            <Route path="/account/:userId" element={<Account />} />
+            <Route path="/profile/:userId" element={<UserProfile />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>)
           : (<Auth handleUserLogged={handleUserLogged} />)
         }

@@ -84,6 +84,7 @@ class UserController extends Controller
         return response()->json([
             'status' => 'success',
             'user' => $userToView,
+            'profile' => $userToView->profile,
             'followed' => $followed,
         ]);
     }
