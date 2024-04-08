@@ -94,17 +94,17 @@ const Profile = () => {
                                 <input
                                     onChange={(e)=>{setEditedUser({...editedUser, username: e.target.value})}}
                                     className='border button-padding semi-rounded'
-                                    value={user?.username}
+                                    value={editedUser?.username}
                                     placeholder='username' />
                                 <input
                                     onChange={(e)=>{setEditedUser({...editedUser, name: e.target.value})}}
                                     className='border button-padding semi-rounded'
-                                    value={user?.name}
+                                    value={editedUser?.name}
                                     placeholder='Full Name' />
                                 <input
                                     onChange={(e)=>{setEditedUser({...editedUser, bio: e.target.value})}}
                                     className='border button-padding semi-rounded'
-                                    value={user?.bio}
+                                    value={editedUser?.bio}
                                     placeholder='bio' />
                                 
                                 <div className='flex row center gap-30'>
