@@ -10,6 +10,7 @@ const sendRequest = async (method, route, body, params) => {
     params,
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "multipart/form-data"
     },
   });
   
