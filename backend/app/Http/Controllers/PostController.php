@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -33,6 +34,24 @@ class PostController extends Controller
             'status' => 'success',
             'message' => 'Post created successfully',
             'post' => $post,
-        ]);
+        ], 201);
+    }
+
+    public function getAllPosts() {
+        $user = Auth::user();
+
+        $posts = $user->following()
+            ->with(['posts' => function ($query) {
+                $query->with(['user' => function ($query1) {
+                    $query1->with('profile');
+                }]);
+            }])
+            ->get()->pluck('posts')->flatten()->sortByDesc('created_at');
+
+        return response()->json([
+           'status' =>'success',
+           'message' => 'Posts retrieved successfully',
+            'posts' => $posts,
+        ], 200);
     }
 }

@@ -69,7 +69,7 @@ class UserController extends Controller
         return response()->json([
            'status' =>'success',
             'users' => $users,
-        ]);
+        ], 200);
     }
 
     public function follow(Request $request) {
@@ -85,7 +85,7 @@ class UserController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'User followed successfully'
-        ]);
+        ], 200);
     }
 
     public function unfollow(Request $request) {
@@ -101,7 +101,7 @@ class UserController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'User unfollowed successfully'
-        ]);
+        ], 200);
     }
 
     public function viewMyProfile() {
@@ -111,7 +111,7 @@ class UserController extends Controller
            'status' =>'success',
             'user' => $user,
             'profile' => $user->profile,
-        ]);
+        ], 200);
     }
 
     public function viewUserProfile(Request $request) {
@@ -133,6 +133,6 @@ class UserController extends Controller
             'user' => $userToView,
             'profile' => $userToView->profile,
             'followed' => $followed,
-        ]);
+        ], 200);
     }
 }

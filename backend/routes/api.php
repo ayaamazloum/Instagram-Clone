@@ -24,4 +24,5 @@ Route::controller(UserController::class)->group(function () {
 
 Route::controller(PostController::class)->group(function () {
     Route::post('post', 'create');
+    Route::get('posts', 'getAllPosts');
 });

@@ -1,0 +1,12 @@
+.posts-container {
+    padding: 30px 20px;
+}
+
+.post-image {
+    width: 400px;
+}
+
+.post-profile-pic {
+    width: 30px;
+    border-radius: 50%;
+}
