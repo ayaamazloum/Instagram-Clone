@@ -44,19 +44,19 @@ const UserProfile = () => {
     <div className='page'>
       <NavBar />
       <div className="profile-info flex row center wrap full-width gap-40 mt-30">
-        <img className='profile-img' src={"http://127.0.0.1:8000/profile_pictures/" + user.profile_picture} />
+        <img className='profile-img' src={"http://127.0.0.1:8000/profile_pictures/" + user?.profile_picture} />
         <div className="info flex column gap-20">
           <div className='flex row start-center gap-20'>
-            <div className="username">{user.username}</div>
-            {user.followed ? 
+            <div className="username">{user?.username}</div>
+            {user?.followed ? 
               <button onClick={() => { handleFollowing(false) }}
                 className='semi-rounded white-bg secondary-border button-padding secondary-text'>Unfollow</button>
               : <button onClick={() => { handleFollowing(true) }}
                 className='semi-rounded secondary-bg button-padding white-text'>Follow</button>
             }
           </div>
-          <p className='xsm-text'>{ user.name}</p>
-          <p className='xsm-text'>{ user.bio}</p>
+          <p className='xsm-text'>{ user?.name}</p>
+          <p className='xsm-text'>{ user?.bio}</p>
         </div>
       </div>
     </div>

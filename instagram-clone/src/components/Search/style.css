@@ -4,6 +4,10 @@
     background-color: #fff;
 }
 
+.search-item {
+    cursor: pointer;
+}
+
 .search-input {
     background-color: #e1e1e170;
     padding: 5px;

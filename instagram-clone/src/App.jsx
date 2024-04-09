@@ -7,6 +7,7 @@ import Auth from "./pages/Auth";
 import Home from "./pages/Home";
 import UserProfile from "./pages/UserProfile";
 import Profile from "./pages/Profile";
+import Post from "./pages/Post";
 
 const App = () => {
   const [userLogged, setUserLogged] = useState(localStorage.getItem('token'));
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/" element={<Home handleUserLogged={handleUserLogged} />} />
             <Route path="/profile/:userId" element={<UserProfile />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/post" element={<Post />} />
           </Routes>)
           : (<Auth handleUserLogged={handleUserLogged} />)
         }

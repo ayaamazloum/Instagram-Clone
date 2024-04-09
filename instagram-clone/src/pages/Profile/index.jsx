@@ -36,12 +36,16 @@ const Profile = () => {
               'bio': res.data.profile.bio,
               'followed' : res.data.followed
             });
-            setEditedUser({ ...user, profile_picture: '' });
             setImage("http://127.0.0.1:8000/profile_pictures/" + res.data.profile.profile_picture);
           }
         } catch (e) {
           console.error(e);
         }
+    }
+
+    const startEditing = () => {
+        setEditedUser({ ...user, profile_picture: '' });
+        setEditing(true);
     }
 
     const handleImageUpload = (e) => {
@@ -67,7 +71,7 @@ const Profile = () => {
                 <div className='flex row start-center gap-20'>
                     <p>{user?.username}</p>
                     <button
-                        onClick={() => { setEditing(true) }}
+                        onClick={() => { startEditing() }}
                         className='semi-rounded white-bg secondary-border button-padding secondary-text'
                     >Edit Profile</button>
                 </div>

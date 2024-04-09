@@ -15,13 +15,17 @@ class PostController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'image' => 'required|string',
-            'caption' => 'required|string',
+            'image' => 'required|File',
         ]);
+        
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalExtension();
+        $filename = time() . '.' . $extension;
+        $file->move(public_path('/posts_images/'), $filename);
 
         $post = Post::create([
             'user_id' => auth()->id(),
-            'image' => $request->image,
+            'image' => $filename,
             'caption' => $request->caption,
         ]);
 
