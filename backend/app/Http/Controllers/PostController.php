@@ -37,21 +37,71 @@ class PostController extends Controller
         ], 201);
     }
 
-    public function getAllPosts() {
+    public function allFollowingsPosts() {
         $user = Auth::user();
 
         $posts = $user->following()
-            ->with(['posts' => function ($query) {
-                $query->with(['user' => function ($query1) {
-                    $query1->with('profile');
-                }]);
-            }])
+            ->with([
+                'posts.user.profile',
+                'posts.comments.user.profile',
+                'posts.likes'
+            ])
             ->get()->pluck('posts')->flatten()->sortByDesc('created_at');
 
         return response()->json([
            'status' =>'success',
            'message' => 'Posts retrieved successfully',
-            'posts' => $posts,
+           'posts' => $posts,
+           'user_id' => $user->id
         ], 200);
+    }
+
+    public function like(Request $request) {
+        $request->validate([
+            'post_id' => 'required|integer'
+        ]);
+
+        $user = Auth::user();
+        $post = Post::findOrFail($request->post_id);
+        $post->likes()->create(['user_id' => $user->id]);
+
+        return response()->json([
+           'status' =>'success',
+           'message' => 'Post liked successfully'
+        ], 201);
+    }
+
+    public function unlike(Request $request) {
+        $request->validate([
+            'post_id' => 'required|integer'
+        ]);
+
+        $user = Auth::user();
+        $post = Post::findOrFail($request->post_id);
+        $post->likes()->where('user_id', $user->id)->delete();
+
+        return response()->json([
+           'status' =>'success',
+           'message' => 'Post unliked successfully'
+        ], 200);
+    }
+
+    public function comment(Request $request) {
+        $request->validate([
+            'post_id' => 'required|integer',
+            'comment' =>'required|string'
+        ]);
+
+        $user = Auth::user();
+        $post = Post::findOrFail($request->post_id);
+        $post->comments()->create([
+            'user_id' => $user->id,
+            'comment_text' => $request->comment
+        ]);
+
+        return response()->json([
+           'status' =>'success',
+           'message' => 'Comment added successfully'
+        ], 201);
     }
 }

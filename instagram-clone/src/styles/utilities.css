@@ -79,6 +79,10 @@ img {
   font-weight: bold;
 }
 
+.semi-bold {
+  font-weight: 600;
+}
+
 .thin {
   font-weight: 100;
 }

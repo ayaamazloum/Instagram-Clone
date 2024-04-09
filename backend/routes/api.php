@@ -24,5 +24,8 @@ Route::controller(UserController::class)->group(function () {
 
 Route::controller(PostController::class)->group(function () {
     Route::post('post', 'create');
-    Route::get('posts', 'getAllPosts');
+    Route::get('posts', 'allFollowingsPosts');
+    Route::post('like', 'like');
+    Route::post('unlike', 'unlike');
+    Route::post('comment', 'comment');
 });

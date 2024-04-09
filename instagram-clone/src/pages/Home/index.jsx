@@ -7,6 +7,7 @@ import UserPost from './Components/UserPost'
 
 const Home = ({ handleUserLogged }) => {
   const [posts, setPosts] = useState();
+  const [userId, setUserId] = useState();
 
   useEffect(() => {
     const loadAllPosts = async () => {
@@ -14,6 +15,7 @@ const Home = ({ handleUserLogged }) => {
         const res = await sendRequest(requestMehods.GET, '/posts');
         if (res.data.status === 'success') {
           setPosts(res.data.posts);
+          setUserId(res.data.user_id);
         }
       } catch (e) { console.error(e); }
     }
@@ -26,7 +28,7 @@ const Home = ({ handleUserLogged }) => {
       <div className='posts-container flex column center gap-40 full-width'>
         {posts?.length > 0 &&
           posts.map((post) => {
-            return (<UserPost key={post.id} post={post} />);
+            return (<UserPost key={post.id} post={post} userId={userId} />);
           })}
       </div>
     </div>
