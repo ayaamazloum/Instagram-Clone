@@ -163,6 +163,10 @@ button {
   cursor: pointer;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .wrap {
   flex-wrap: wrap;
 }

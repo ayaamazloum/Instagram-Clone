@@ -2,11 +2,18 @@
     padding: 30px 20px;
 }
 
-.post-image {
-    width: 400px;
+.post {
+    width: 90%;
+    max-width: 400px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(159, 159, 159, 0.47);
 }
 
 .post-profile-pic {
     width: 30px;
     border-radius: 50%;
+}
+
+.post-icon {
+    width: 25px;
 }
