@@ -10,19 +10,3 @@
     height: 150px;
     object-fit: cover;
 }
-
-.popup {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #30303052;
-    height: 100vh;
-    width: 100vw;
-}
-
-.popup-content {
-    background-color: white;
-    width: fit-content;
-    padding: 30px;
-}
